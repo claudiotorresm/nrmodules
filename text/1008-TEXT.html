@@ -1,0 +1,30 @@
+
+<script type="text/x-red" data-template-name="text">
+   <div class="form-row">
+        <label for="node-input-text"><i class="fa fa-tag"></i> <span data-i18n="common.label.text"></span></label>
+        <input type="text" id="node-input-text" style="width:73% !important" data-i18n="[placeholder]common.label.text">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="text">
+    <p>Implements a text element when parsed by a front-end parser</p>
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType('text',{
+        category: 'ui',
+        color:"#D84D9C",
+        defaults: {
+	        text: {value:'<h2>Some text</h2>'}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "jq.png",
+        label: function() {
+            return this.name||this.tag||"text";
+        },
+        labelStyle: function() {
+            return this.name?"node_label_italic":"";
+        }
+    });
+</script>

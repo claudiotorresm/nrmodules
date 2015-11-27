@@ -1,0 +1,30 @@
+
+<script type="picklist/x-red" data-template-name="picklist">
+   <div class="form-row">
+        <label for="node-input-background"><i class="fa fa-tag"></i> <span data-i18n="common.label.background"></span></label>
+        <input type="picklist" id="node-input-background" style="width:73% !important" data-i18n="[placeholder]common.label.background">
+    </div>
+</script>
+
+<script type="picklist/x-red" data-help-name="picklist">
+    <p>Implements a picklist element when parsed by a front-end parser</p>
+</script>
+
+<script type="picklist/javascript">
+    RED.nodes.registerType('picklist',{
+        category: 'ui',
+        color:"#D84D9C",
+        defaults: {
+	        background: {value:'white'}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "jq.png",
+        label: function() {
+            return this.name||this.tag||"picklist";
+        },
+        labelStyle: function() {
+            return this.name?"node_label_italic":"";
+        }
+    });
+</script>
