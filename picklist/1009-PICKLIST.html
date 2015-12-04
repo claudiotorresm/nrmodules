@@ -1,8 +1,12 @@
 
 <script type="picklist/x-red" data-template-name="picklist">
    <div class="form-row">
-        <label for="node-input-background"><i class="fa fa-tag"></i> <span data-i18n="common.label.background"></span></label>
-        <input type="picklist" id="node-input-background" style="width:73% !important" data-i18n="[placeholder]common.label.background">
+        <label for="node-input-picklist"><i class="fa fa-tag"></i> <span data-i18n=Picklist properties></span></label>
+        <input type="text" id="node-input-picklist" style="width:73% !important" data-i18n="[placeholder]common.label.picklist">
+    </div>
+    <div class="form-row">
+        <label for="node-input-idproperty"><i class="fa fa-tag"></i> <span data-i18n=ID property></span></label>
+        <input type="text" id="node-input-idproperty" style="width:73% !important" data-i18n="[placeholder]common.label.idproperty">
     </div>
 </script>
 
@@ -10,12 +14,13 @@
     <p>Implements a picklist element when parsed by a front-end parser</p>
 </script>
 
-<script type="picklist/javascript">
+<script type="text/javascript">
     RED.nodes.registerType('picklist',{
         category: 'ui',
         color:"#D84D9C",
         defaults: {
-	        background: {value:'white'}
+	        picklist: {value:'name,id'},
+	        idproperty: {value: 'id'}
         },
         inputs:1,
         outputs:1,

@@ -14,26 +14,29 @@
   limitations under the License.
 -->
 
-<script type="text/x-red" data-template-name="section">
+<script type="text/x-red" data-template-name="bleservices">
     <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> <span data-i18n="common.label.name"></span></label>
+        <input type="text" id="node-input-name" style="width:73% !important" data-i18n="[placeholder]common.label.name">
     </div>
 </script>
 
-<script type="text/x-red" data-help-name="section">
-    <p>Implements a section element when parsed by a front-end parser</p>
+<script type="text/x-red" data-help-name="bleservices">
+    <p>Implements a ble-services element when parsed by a front-end parser</p>
 </script>
 
 <script type="text/javascript">
-    RED.nodes.registerType('section',{
+    RED.nodes.registerType('bleservices',{
         category: 'ui',
-        color:"#986DBC",
+        color:"#D84D9C",
         defaults: {
+            name: {value:"bleservices"}
         },
         inputs:1,
         outputs:1,
         icon: "jq.png",
         label: function() {
-            return this.name||this.tag||"section";
+            return this.name||"bleservices";
         },
         labelStyle: function() {
             return this.name?"node_label_italic":"";

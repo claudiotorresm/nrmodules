@@ -19,6 +19,10 @@
         <label for="node-input-name"><i class="fa fa-tag"></i> <span data-i18n="common.label.name"></span></label>
         <input type="text" id="node-input-name" style="width:73% !important" data-i18n="[placeholder]common.label.name">
     </div>
+    <div class="form-row">
+        <label for="node-input-events"><i class="fa fa-tag"></i> <span data-i18n="common.label.events">events</span></label>
+        <input type="text" id="node-input-events" style="width:73% !important" data-i18n="[placeholder]common.label.events">
+    </div>
 </script>
 
 <script type="text/x-red" data-help-name="input">
@@ -30,7 +34,8 @@
         category: 'ui',
         color:"#D84D9C",
         defaults: {
-            name: {value:"Some Input"}
+            name: {value:"Some Input"},
+	        events: {value: 'change'}
         },
         inputs:1,
         outputs:1,
