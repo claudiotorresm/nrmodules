@@ -1,0 +1,30 @@
+
+<script type="cdbattery/x-red" data-template-name="cdbattery">
+   <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> <span data-i18n="common.label.name"></span></label>
+        <input type="text" id="node-input-name" style="width:73% !important" data-i18n="[placeholder]common.label.name">
+    </div>
+</script>
+
+<script type="cdbattery/x-red" data-help-name="cdbattery">
+    <p>Implements a cdbattery element when parsed by a front-end parser</p>
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType('cdbattery',{
+        category: 'cordova',
+        color:"#D89D9C",
+        defaults: {
+	        name: {value:'Cordova Battery Status'}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "jq.png",
+        label: function() {
+            return this.name||"cdbattery";
+        },
+        labelStyle: function() {
+            return this.name?"node_label_italic":"";
+        }
+    });
+</script>

@@ -1,0 +1,35 @@
+
+<script type="cdvibration/x-red" data-template-name="cdvibration">
+   <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> <span data-i18n="common.label.name"></span></label>
+        <input type="text" id="node-input-name" style="width:73% !important" data-i18n="[placeholder]common.label.name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-vibration"><i class="fa fa-tag"></i> <span data-i18n="common.label.name">ms</span></label>
+        <input type="text" id="node-input-vibration" style="width:73% !important" data-i18n="[placeholder]common.label.vibration">
+    </div>
+</script>
+
+<script type="cdvibration/x-red" data-help-name="cdvibration">
+    <p>Implements a cdvibration element when parsed by a front-end parser</p>
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType('cdvibration',{
+        category: 'cordova',
+        color:"#D89D9C",
+        defaults: {
+	        name: {value:'Cordova vibration'},
+	        vibration: {value: 100}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "jq.png",
+        label: function() {
+            return this.name||"cdvibration";
+        },
+        labelStyle: function() {
+            return this.name?"node_label_italic":"";
+        }
+    });
+</script>

@@ -1,8 +1,12 @@
 
 <script type="text/x-red" data-template-name="page">
+<div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> <span data-i18n="common.label.name"></span></label>
+        <input type="text" id="node-input-name" style="width:73% !important" data-i18n="[placeholder]common.label.name">
+    </div>
    <div class="form-row">
-        <label for="node-input-background"><i class="fa fa-tag"></i> <span data-i18n="common.label.background"></span></label>
-        <input type="text" id="node-input-background" style="width:73% !important" data-i18n="[placeholder]common.label.background">
+        <label for="node-input-background"><i class="fa fa-tag"></i> <span data-i18n="common.label.background">Style</span></label>
+        <input type="text" id="node-input-style" style="width:73% !important" data-i18n="[placeholder]common.label.background">
     </div>
 </script>
 
@@ -15,7 +19,8 @@
         category: 'ui',
         color:"#986DBC",
         defaults: {
-	        background: {value:'white'}
+	        style: {value:''},
+	        name: {value:''}
         },
         inputs:1,
         outputs:1,
