@@ -12,6 +12,10 @@
         <label for="node-input-idproperty"><i class="fa fa-tag"></i> ID property</label>
         <input type="text" id="node-input-idproperty" style="width:73% !important" data-i18n="[placeholder]common.label.idproperty">
     </div>
+    <div class="form-row">
+        <label for="node-input-style"><i class="fa fa-tag"></i> <span data-i18n="common.label.style">Style</span></label>
+        <input type="text" id="node-input-style" style="width:73% !important" data-i18n="[placeholder]common.label.style">
+    </div>
 </script>
 
 <script type="picklist/x-red" data-help-name="picklist">
@@ -33,7 +37,8 @@
         defaults: {
 	        name: {value: 'picklist'},
 	        picklist: {value:'name,id'},
-	        idproperty: {value: 'id'}
+	        idproperty: {value: 'id'},
+	        style:{value:''}
         },
         inputs:1,
         outputs:1,
