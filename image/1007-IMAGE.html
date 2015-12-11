@@ -4,12 +4,17 @@
         <label for="node-input-image"><i class="fa fa-tag"></i> <span data-i18n="common.label.image"></span></label>
         <input type="text" id="node-input-image" style="width:73% !important" data-i18n="[placeholder]common.label.image">
     </div>
+    <div class="form-row">
+        <label for="node-input-style"><i class="fa fa-tag"></i> <span data-i18n="common.label.style">Style</span></label>
+        <input type="text" id="node-input-style" style="width:73% !important" data-i18n="[placeholder]common.label.style">
+    </div>
 </script>
 
 <script type="text/x-red" data-help-name="image">
     <p>Implements a image element when parsed by a front-end parser</p>
     <p>
-    IMplements an IMG tag with src set to the url provided in the 'image' property
+    Implements an IMG tag with src set to the url provided in the 'image' property. Since Evothings-studio uses
+    https to proxy web app updates, you might need to use https:// to refer to external images.
     </p>
 </script>
 
@@ -18,7 +23,8 @@
         category: 'ui',
         color:"#D84D9C",
         defaults: {
-	        image: {value:'http://evomedia.evothings.com/2013/11/evothings_logo_large_white1.png'}
+	        image: {value:'http://evomedia.evothings.com/2013/11/evothings_logo_large_white1.png'},
+	        style:{value:''}
         },
         inputs:1,
         outputs:1,
