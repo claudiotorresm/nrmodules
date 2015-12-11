@@ -1,0 +1,24 @@
+{
+  "name": "nrmodules",
+  "version": "1.0.0",
+  "description": "node-red modules for use with the node-red editor. just editor placeholders, really, since the wiring and widgets will be created in the front-end later on",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/psvensson/nrmodules.git"
+  },
+  "keywords": [
+    "node-red",
+    "nrfe",
+    "widgets"
+  ],
+  "author": "psvensson@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/psvensson/nrmodules/issues"
+  },
+  "homepage": "https://github.com/psvensson/nrmodules#readme"
+}

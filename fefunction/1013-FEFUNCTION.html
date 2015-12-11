@@ -1,0 +1,35 @@
+
+<script type="fefunction/x-red" data-template-name="fefunction">
+   <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> <span data-i18n="common.label.name"></span></label>
+        <input type="text" id="node-input-name" style="width:73% !important" data-i18n="[placeholder]common.label.name">
+    </div>
+</script>
+
+<script type="fefunction/x-red" data-help-name="fefunction">
+    <p>Implements a fefunction element when parsed by a front-end parser</p>
+    <p>
+    Lets you define any JavaScript function body that will receive one argument when called, named 'msg'.
+    The function wil be called when a message is sent to the module. The function can then send output messages by calling 'this.send()'.
+    Note the common format of {payload: xxxx} as expected input in most cases.
+    </p>
+</script>
+
+<script type="text/javascript">
+	RED.nodes.registerType('fefunction',{
+		category: 'cordova',
+		color:"#D89D9C",
+		defaults: {
+			name: {value: 'Function'}
+		},
+		inputs:1,
+		outputs:1,
+		icon: "function.png",
+		label: function() {
+			return this.name||"fefunction";
+		},
+		labelStyle: function() {
+			return this.name?"node_label_italic":"";
+		}
+	});
+</script>

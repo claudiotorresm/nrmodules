@@ -23,10 +23,18 @@
         <label for="node-input-background"><i class="fa fa-tag"></i> <span data-i18n="common.label.background">Style</span></label>
         <input type="text" id="node-input-style" style="width:73% !important" data-i18n="[placeholder]common.label.background">
     </div>
+    <div class="form-row">
+        <label for="node-input-order"><i class="fa fa-tag"></i> <span data-i18n="common.label.order">Order</span></label>
+        <input type="text" id="node-input-order" style="width:73% !important" data-i18n="[placeholder]common.label.order">
+    </div>
 </script>
 
 <script type="text/x-red" data-help-name="section">
     <p>Implements a section element when parsed by a front-end parser</p>
+    <p>
+    The section defines a Material Design Lite Grid element, to be placed under a 'Page' component.
+    This is useful for grouping related ui components. The 'order' property defines in which order this section is to be displayed under a page (or other section)
+    </p>
 </script>
 
 <script type="text/javascript">
@@ -34,8 +42,9 @@
         category: 'ui',
         color:"#986DBC",
         defaults: {
-	            name: {value: ''},
-			    style: {value:''}
+	        name: {value: ''},
+			style: {value:''},
+	        order: {value:'1'}
         },
         inputs:1,
         outputs:1,

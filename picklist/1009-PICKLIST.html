@@ -16,6 +16,14 @@
 
 <script type="picklist/x-red" data-help-name="picklist">
     <p>Implements a picklist element when parsed by a front-end parser</p>
+    <p>
+    The picklist is a table component which can be dynamically populated, to be used mainly with other components which splurge out messages asynchronously, like bluetooth.
+    The 'picklist' property is a comma-separated string which declares both the names of the columns in the table, but also the names of the properties of incoming object payloads to be shown.
+	The 'idproperty'property defines which attribute to assume to be unique for incoming object payloads. If an object is received which has already been placed in the table, it will be ignored.
+    </p>
+    <p>
+    When a row in the picklist table is selected, the coresponding object is sent out as payload output.
+    </p>
 </script>
 
 <script type="text/javascript">

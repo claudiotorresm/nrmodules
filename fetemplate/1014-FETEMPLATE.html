@@ -1,0 +1,43 @@
+
+<script type="fetemplate/x-red" data-template-name="fetemplate">
+   <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> <span data-i18n="common.label.name"></span></label>
+        <input type="text" id="node-input-name" style="width:73% !important" data-i18n="[placeholder]common.label.name">
+    </div>
+   <div class="form-row">
+	   <label for="node-input-template"><i class="fa fa-tag"></i> <span data-i18n="common.label.name">Template</span></label>
+	   <input type="text" id="node-input-template" style="width:73% !important" data-i18n="[placeholder]common.label.template">
+   </div>
+   <div class="form-row">
+	   <label for="node-input-events"><i class="fa fa-tag"></i> <span data-i18n="common.label.events">events</span></label>
+	   <input type="text" id="node-input-events" style="width:73% !important" data-i18n="[placeholder]common.label.events">
+   </div>
+</script>
+
+<script type="fetemplate/x-red" data-help-name="fetemplate">
+    <p>Implements a fetemplate element when parsed by a front-end parser</p>
+	<p>
+	Parses the object contained in msg.payload with the provided 'template' property as Mustache template. Thanks Jan! :)
+	</p>
+</script>
+
+<script type="text/javascript">
+	RED.nodes.registerType('fetemplate',{
+		category: 'cordova',
+		color:"#D89D9C",
+		defaults: {
+			name: {value: 'Template'},
+			events: {value: 'click'},
+			template:{value: 'Payload contained name {{name}} !'}
+		},
+		inputs:1,
+		outputs:1,
+		icon: "template.png",
+		label: function() {
+			return this.name||"Template";
+		},
+		labelStyle: function() {
+			return this.name?"node_label_italic":"";
+		}
+	});
+</script>

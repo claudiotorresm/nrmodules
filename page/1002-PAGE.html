@@ -5,13 +5,18 @@
         <input type="text" id="node-input-name" style="width:73% !important" data-i18n="[placeholder]common.label.name">
     </div>
    <div class="form-row">
-        <label for="node-input-background"><i class="fa fa-tag"></i> <span data-i18n="common.label.background">Style</span></label>
-        <input type="text" id="node-input-style" style="width:73% !important" data-i18n="[placeholder]common.label.background">
+        <label for="node-input-style"><i class="fa fa-tag"></i> <span data-i18n="common.label.style">Style</span></label>
+        <input type="text" id="node-input-style" style="width:73% !important" data-i18n="[placeholder]common.label.style">
     </div>
 </script>
 
 <script type="text/x-red" data-help-name="page">
     <p>Implements a page element when parsed by a front-end parser</p>
+    <p>
+    This is the main starting point for a NRFE app. You must have one of these (and only one.
+    All other NRFE ui components must be attached to this to be visible (or to a container node which is attached to this).
+    Try to set the style attribute to background-color:blue, and go wild from there.
+    </p>
 </script>
 
 <script type="text/javascript">
