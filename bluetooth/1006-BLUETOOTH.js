@@ -16,5 +16,5 @@ module.exports = function(RED) {
             else { node.send(msg); } // If no payload - just pass it on.
         });
     }
-    RED.nodes.registerType("bluetooth",CheerioNode);
+    RED.nodes.registerType("blescan",CheerioNode);
 }
