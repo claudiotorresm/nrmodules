@@ -1,11 +1,11 @@
-<script type="text/x-red" data-template-name="bleservices">
+<script type="text/x-red" data-template-name="tisensor">
     <div class="form-row">
         <label for="node-input-name"><i class="fa fa-tag"></i> <span data-i18n="common.label.name"></span></label>
         <input type="text" id="node-input-name" style="width:73% !important" data-i18n="[placeholder]common.label.name">
     </div>
 </script>
 
-<script type="text/x-red" data-help-name="bleservices">
+<script type="text/x-red" data-help-name="tisensor">
     <p>Implements a ble-services element when parsed by a front-end parser</p>
     <p>
     Takes as input a payload object with the same format as the bluetooth module sends as output:
@@ -16,17 +16,17 @@
 </script>
 
 <script type="text/javascript">
-    RED.nodes.registerType('bleservices',{
+    RED.nodes.registerType('tisensor',{
         category: 'bluetooth_icon',
         color:"#D84D9C",
         defaults: {
-            name: {value:"bleservices"}
+            name: {value:"tisensor"}
         },
         inputs:1,
         outputs:1,
-        icon: "ui.png",
+        icon: "ti.png",
         label: function() {
-            return this.name||"bleservices";
+            return this.name||"tisensor";
         },
         labelStyle: function() {
             return this.name?"node_label_italic":"";
