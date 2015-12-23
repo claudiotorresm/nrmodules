@@ -1,11 +1,11 @@
-<script type="text/x-red" data-template-name="bleservices">
+<script type="text/x-red" data-template-name="blecharacteristics">
     <div class="form-row">
         <label for="node-input-name"><i class="fa fa-tag"></i> <span data-i18n="common.label.name"></span></label>
         <input type="text" id="node-input-name" style="width:73% !important" data-i18n="[placeholder]common.label.name">
     </div>
 </script>
 
-<script type="text/x-red" data-help-name="bleservices">
+<script type="text/x-red" data-help-name="blecharacteristics">
     <p>Implements a ble-services element when parsed by a front-end parser</p>
     <p>
     Takes as input a payload object with the same format as the bluetooth module sends as output:
@@ -16,17 +16,17 @@
 </script>
 
 <script type="text/javascript">
-    RED.nodes.registerType('bleservices',{
+    RED.nodes.registerType('blecharacteristics',{
         category: 'Bluetooth',
         color:"#D84D9C",
         defaults: {
-            name: {value:"BLE Services"}
+            name: {value:"BLE Characteristics"}
         },
         inputs:1,
         outputs:1,
         icon: "bt.png",
         label: function() {
-            return this.name||"BLE Services";
+            return this.name||"BLE Characteristics";
         },
         labelStyle: function() {
             return this.name?"node_label_italic":"";
