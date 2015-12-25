@@ -8,10 +8,12 @@
 <script type="text/x-red" data-help-name="bledescriptors">
     <p>Implements a ble-services element when parsed by a front-end parser</p>
     <p>
-    Takes as input a payload object with the same format as the bluetooth module sends as output:
-	{address:"xxxxx",...}
-	It then connects to the BLE device on that address and requests a list of services, which are then sent as output.
-	If an error occurs, it will end a message of the form {error: "error message}
+    Takes as input a payload object with following format:
+	{device: xxxxxx, characteristic: yyyyyy} which references a device object and a characteristic object repectively.
+	</p>
+	<p>
+	It then reads all descriptors of the device characteristics and output them as an array in the following format:
+	{payload: {descriptors:descriptors}}
     </p>
 </script>
 
