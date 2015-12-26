@@ -3,15 +3,51 @@
         <label for="node-input-name"><i class="fa fa-tag"></i> <span data-i18n="common.label.name"></span></label>
         <input type="text" id="node-input-name" style="width:73% !important" data-i18n="[placeholder]common.label.name">
     </div>
+    <!-- Toggle connect to nearest -->
+    <div class="form-row">
+        <label for="node-input-connectdirect"><i class="fa fa-tag"></i> <span data-i18n="common.label.name">Connect to nearest</span></label>
+        <input type="checkbox" id="node-input-connectdirect" >
+    </div>
+    <!-- Address of tag to connect to -->
+    <div class="form-row">
+        <label for="node-input-address"><i class="fa fa-tag"></i> <span data-i18n="common.label.name">Address:</span></label>
+        <input type="text" id="node-input-address" style="width:73% !important" data-i18n="[placeholder]common.label.name">
+    </div>
+    <!-- checkboxes for services to poll -->
+    <div class="form-row">
+        <label for="node-input-temperature"><i class="fa fa-tag"></i> <span data-i18n="common.label.name">Temperature</span></label>
+        <input type="checkbox" id="node-input-temperature" >
+    </div>
+    <div class="form-row">
+        <label for="node-input-humidity"><i class="fa fa-tag"></i> <span data-i18n="common.label.name">Humidity</span></label>
+        <input type="checkbox" id="node-input-humidity" >
+    </div>
+    <div class="form-row">
+        <label for="node-input-barometer"><i class="fa fa-tag"></i> <span data-i18n="common.label.name">Barometer</span></label>
+        <input type="checkbox" id="node-input-barometer" >
+    </div>
+    <div class="form-row">
+        <label for="node-input-accelerometer"><i class="fa fa-tag"></i> <span data-i18n="common.label.name">Accelerometer</span></label>
+        <input type="checkbox" id="node-input-accelerometer" >
+    </div>
+    <div class="form-row">
+        <label for="node-input-magnetometer"><i class="fa fa-tag"></i> <span data-i18n="common.label.name">Magnetometer</span></label>
+        <input type="checkbox" id="node-input-magnetometer" >
+    </div>
+    <div class="form-row">
+        <label for="node-input-gyroscope"><i class="fa fa-tag"></i> <span data-i18n="common.label.name">Gyroscope</span></label>
+        <input type="checkbox" id="node-input-gyroscope" >
+    </div>
+    <div class="form-row">
+        <label for="node-input-keypress"><i class="fa fa-tag"></i> <span data-i18n="common.label.name">Keypress</span></label>
+        <input type="checkbox" id="node-input-keypress" >
+    </div>
 </script>
 
 <script type="text/x-red" data-help-name="tisensor">
-    <p>Implements a ble-services element when parsed by a front-end parser</p>
+    <p>Implements a TI SensorTag element when parsed by a front-end parser</p>
     <p>
-    Takes as input a payload object with the same format as the bluetooth module sends as output:
-	{address:"xxxxx",...}
-	It then connects to the BLE device on that address and requests a list of services, which are then sent as output.
-	If an error occurs, it will end a message of the form {error: "error message}
+
     </p>
 </script>
 
@@ -20,13 +56,13 @@
         category: 'Bluetooth',
         color:"#D84D9C",
         defaults: {
-            name: {value:"tisensor"}
+            name: {value:"TI SensorTag"}
         },
         inputs:1,
         outputs:1,
         icon: "ti.png",
         label: function() {
-            return this.name||"tisensor";
+            return this.name||"TI SensorTag";
         },
         labelStyle: function() {
             return this.name?"node_label_italic":"";

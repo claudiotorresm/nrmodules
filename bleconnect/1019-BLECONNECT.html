@@ -1,32 +1,32 @@
-<script type="text/x-red" data-template-name="bleservices">
+<script type="text/x-red" data-template-name="bleconnect">
     <div class="form-row">
         <label for="node-input-name"><i class="fa fa-tag"></i> <span data-i18n="common.label.name"></span></label>
         <input type="text" id="node-input-name" style="width:73% !important" data-i18n="[placeholder]common.label.name">
     </div>
 </script>
 
-<script type="text/x-red" data-help-name="bleservices">
+<script type="text/x-red" data-help-name="bleconnect">
     <p>Implements a ble-services element when parsed by a front-end parser</p>
     <p>
     Takes as input a payload object with thefollowing format:
-	{device:"xxxxx",...}
-	It then connects to the BLE device on that address and requests a list of services, which are then sent as output.
-
+	{address:"xxxxx",...}
+	It then connects to the BLE device on that address and send the devicehandle as payload: {device: yyyyy}.
+	If an error occurs, it will end a message of the form {error: "error message}
     </p>
 </script>
 
 <script type="text/javascript">
-    RED.nodes.registerType('bleservices',{
+    RED.nodes.registerType('bleconnect',{
         category: 'Bluetooth',
         color:"#D84D9C",
         defaults: {
-            name: {value:"BLE Services"}
+            name: {value:"BLE Connect"}
         },
         inputs:1,
         outputs:1,
         icon: "bt.png",
         label: function() {
-            return this.name||"BLE Services";
+            return this.name||"BLE Connect";
         },
         labelStyle: function() {
             return this.name?"node_label_italic":"";
