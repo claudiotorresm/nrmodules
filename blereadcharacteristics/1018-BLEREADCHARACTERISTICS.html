@@ -1,17 +1,17 @@
-<script type="text/x-red" data-template-name="blereadcharacteristics">
+<script type="text/x-red" data-template-name="blereadcharacteristic">
     <div class="form-row">
         <label for="node-input-name"><i class="fa fa-tag"></i> <span data-i18n="common.label.name"></span></label>
         <input type="text" id="node-input-name" style="width:73% !important" data-i18n="[placeholder]common.label.name">
     </div>
 </script>
 
-<script type="text/x-red" data-help-name="blereadcharacteristics">
+<script type="text/x-red" data-help-name="blereadcharacteristic">
     <p>Implements a ble-services element when parsed by a front-end parser</p>
     <p>
     Takes as input a payload object the following format:
     </p>
     <p>
-	{device:xxxxx, service: yyyyy} which must be handles to a device and a service object respectively.
+	{device:xxxxx, handle: yyyyy} which must be handles to a device and a characteristics respectively.
 	</p>
 	<p>
 	It then reads the characteristics of the specificed service and outputs a message of the format
@@ -20,17 +20,17 @@
 </script>
 
 <script type="text/javascript">
-    RED.nodes.registerType('blereadcharacteristics',{
+    RED.nodes.registerType('blereadcharacteristic',{
         category: 'Bluetooth',
         color:"#D84D9C",
         defaults: {
-            name: {value:"BLE Read Characteristics"}
+            name: {value:"BLE Read Characteristic"}
         },
         inputs:1,
         outputs:1,
         icon: "bt.png",
         label: function() {
-            return this.name||"BLE Read Characteristics";
+            return this.name||"BLE Read Characteristic";
         },
         labelStyle: function() {
             return this.name?"node_label_italic":"";
