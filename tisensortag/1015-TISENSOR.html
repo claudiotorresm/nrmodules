@@ -4,8 +4,8 @@
         <input type="text" id="node-input-name" style="width:63% !important" data-i18n="[placeholder]common.label.name">
     </div>
     <div class="form-row">
-        <label for="node-input-type"><i class="fa fa-tag"></i> <span>Type:</span></label>
-        <select id="node-input-type" name="type">
+        <label for="node-input-sensortype"><i class="fa fa-tag"></i> <span>Type:</span></label>
+        <select id="node-input-sensortype" name="type">
           <option value="CC2650">CC2650</option>
           <option value="CC2541" selected>CC2541</option>
         </select>
@@ -74,7 +74,7 @@
         color:"#D84D9C",
         defaults: {
             name: {value:"TI SensorTag"},
-            type:{value:'CC2541'},
+            sensortype:{value:'CC2541'},
             connectdirect:{value:false},
             temperature:{value:false},
             humidity:{value:false},
