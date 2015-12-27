@@ -3,43 +3,49 @@
         <label for="node-input-name"><i class="fa fa-tag"></i> <span data-i18n="common.label.name"></span></label>
         <input type="text" id="node-input-name" style="width:63% !important" data-i18n="[placeholder]common.label.name">
     </div>
+    <div class="form-row">
+        <label for="node-input-type"><i class="fa fa-tag"></i> <span>Type:</span></label>
+        <select id="node-input-type" name="type">
+          <option value="CC2650">CC2650</option>
+          <option value="CC2541" selected>CC2541</option>
+        </select>
+    </div>
     <!-- Toggle connect to nearest -->
     <div class="form-row">
-        <label for="node-input-connectdirect"><i class="fa fa-tag"></i> <span>Connect to nearest</span></label>
+        <label for="node-input-connectdirect" style="width:33% !important"><i class="fa fa-tag"></i> <span>Connect to nearest</span></label>
         <input type="checkbox" id="node-input-connectdirect" >
     </div>
-    <!-- Address of tag to connect to -->
     <div class="form-row">
-        <label for="node-input-address"><i class="fa fa-tag"></i> <span >Address:</span></label>
-        <input type="text" id="node-input-address" style="width:63% !important" data-i18n="[placeholder]common.label.name">
+        <label for="node-input-pollinterval"><i class="fa fa-tag"></i> <span data-i18n="common.label.name"></span></label>
+        <input type="text" id="node-input-pollinterval" style="width:63% !important">
     </div>
     <!-- checkboxes for services to poll -->
     <div class="form-row">
-        <label for="node-input-temperature"><i class="fa fa-tag"></i> <span >Temperature</span></label>
+        <label for="node-input-temperature" style="width:33% !important"><i class="fa fa-tag"></i> <span >Temperature</span></label>
         <input type="checkbox" id="node-input-temperature" >
     </div>
     <div class="form-row">
-        <label for="node-input-humidity"><i class="fa fa-tag"></i> <span >Humidity</span></label>
+        <label for="node-input-humidity" style="width:33% !important"><i class="fa fa-tag"></i> <span >Humidity</span></label>
         <input type="checkbox" id="node-input-humidity" >
     </div>
     <div class="form-row">
-        <label for="node-input-barometer"><i class="fa fa-tag"></i> <span >Barometer</span></label>
+        <label for="node-input-barometer" style="width:33% !important"><i class="fa fa-tag"></i> <span >Barometer</span></label>
         <input type="checkbox" id="node-input-barometer" >
     </div>
     <div class="form-row">
-        <label for="node-input-accelerometer"><i class="fa fa-tag"></i> <span >Accelerometer</span></label>
+        <label for="node-input-accelerometer" style="width:33% !important"><i class="fa fa-tag"></i> <span >Accelerometer</span></label>
         <input type="checkbox" id="node-input-accelerometer" >
     </div>
     <div class="form-row">
-        <label for="node-input-magnetometer"><i class="fa fa-tag"></i> <span >Magnetometer</span></label>
+        <label for="node-input-magnetometer" style="width:33% !important"><i class="fa fa-tag"></i> <span >Magnetometer</span></label>
         <input type="checkbox" id="node-input-magnetometer" >
     </div>
     <div class="form-row">
-        <label for="node-input-gyroscope"><i class="fa fa-tag"></i> <span >Gyroscope</span></label>
+        <label for="node-input-gyroscope" style="width:33% !important"><i class="fa fa-tag"></i> <span >Gyroscope</span></label>
         <input type="checkbox" id="node-input-gyroscope" >
     </div>
     <div class="form-row">
-        <label for="node-input-keypress"><i class="fa fa-tag"></i> <span >Keypress</span></label>
+        <label for="node-input-keypress" style="width:33% !important"><i class="fa fa-tag"></i> <span >Keypress</span></label>
         <input type="checkbox" id="node-input-keypress" >
     </div>
 </script>
@@ -47,7 +53,18 @@
 <script type="text/x-red" data-help-name="tisensor">
     <p>Implements a TI SensorTag element when parsed by a front-end parser</p>
     <p>
-
+        It can be configured to enable any combination of on-board sensors. When a sensor is enabled, its polled value
+          will be send as payload with the property name of the sensor, for example: {temperature: xxxxx}
+          If connect to nearest device is not checked, a device object need to be send as payload, in the following format:
+           {payload: {device: yyyy}}.
+    </p>
+    <p>
+        The device object format looks like this: {"address":"5C:31:3E:BF:E6:A1","rssi":-63,"name":"SensorTag","scanRecord":"AgEFCglTZW5zb3JUYWcFElAAIAMCCgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=","advertisementData":{"kCBAdvDataLocalName":"SensorTag","kCBAdvDataTxPowerLevel":0}}
+        and is the same object format that is sent out by the ble scan module.
+    </p>
+    <p>
+        This module will start connecting to and read sensordata from the TI Sensor tag when it recieves its first message.
+        When the next message is sent, the module will disconnect, and so on.
     </p>
 </script>
 
@@ -57,15 +74,16 @@
         color:"#D84D9C",
         defaults: {
             name: {value:"TI SensorTag"},
+            type:{value:'CC2541'},
             connectdirect:{value:false},
-            address:{value:''},
             temperature:{value:false},
             humidity:{value:false},
             barometer:{value:false},
             accelerometer:{value:false},
             magnetometer:{value:false},
             gyroscope:{value:false},
-            keypress:{value:false}
+            keypress:{value:false},
+            pollinterval:{value:100}
         },
         inputs:1,
         outputs:1,
