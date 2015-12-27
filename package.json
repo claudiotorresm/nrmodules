@@ -1,6 +1,6 @@
 {
   "name": "nrmodules",
-  "version": "1.0.24",
+  "version": "1.0.25",
   "description": "node-red modules for use with the node-red editor. just editor placeholders, really, since the wiring and widgets will be created in the front-end later on",
   "main": "index.js",
   "scripts": {

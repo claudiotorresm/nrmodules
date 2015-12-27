@@ -1,7 +1,7 @@
 <script type="text/x-red" data-template-name="tisensor">
     <div class="form-row">
         <label for="node-input-name"><i class="fa fa-tag"></i> <span data-i18n="common.label.name"></span></label>
-        <input type="text" id="node-input-name" style="width:73% !important" data-i18n="[placeholder]common.label.name">
+        <input type="text" id="node-input-name" style="width:63% !important" data-i18n="[placeholder]common.label.name">
     </div>
     <!-- Toggle connect to nearest -->
     <div class="form-row">
@@ -11,7 +11,7 @@
     <!-- Address of tag to connect to -->
     <div class="form-row">
         <label for="node-input-address"><i class="fa fa-tag"></i> <span >Address:</span></label>
-        <input type="text" id="node-input-address" style="width:73% !important" data-i18n="[placeholder]common.label.name">
+        <input type="text" id="node-input-address" style="width:63% !important" data-i18n="[placeholder]common.label.name">
     </div>
     <!-- checkboxes for services to poll -->
     <div class="form-row">
@@ -56,7 +56,16 @@
         category: 'Bluetooth',
         color:"#D84D9C",
         defaults: {
-            name: {value:"TI SensorTag"}
+            name: {value:"TI SensorTag"},
+            connectdirect:{value:false},
+            address:{value:''},
+            temperature:{value:false},
+            humidity:{value:false},
+            barometer:{value:false},
+            accelerometer:{value:false},
+            magnetometer:{value:false},
+            gyroscope:{value:false},
+            keypress:{value:false}
         },
         inputs:1,
         outputs:1,
